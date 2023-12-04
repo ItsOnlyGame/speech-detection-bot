@@ -1,0 +1,4 @@
+node_modules/
+
+list_of_banned_words.txt
+.env
