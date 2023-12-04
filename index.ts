@@ -108,7 +108,7 @@ client.on("speech", async (msg: VoiceMessage) => {
       }
     } else {
       if (modifiedMessageContent.includes(modifiedWord)) {
-        const stream = getVoiceStream(`${msg.author.username} is being racist`);
+        const stream = getVoiceStream(`${msg.author.username} used a banned word`);
         const audioResource = createAudioResource(stream, {
           inputType: StreamType.Arbitrary,
           inlineVolume: true,
@@ -120,7 +120,7 @@ client.on("speech", async (msg: VoiceMessage) => {
         }
 
         console.log(
-          `${msg.author.username} is being racist, making him disconnect!`
+          `${msg.author.username} used a banned word, making him disconnect!`
         );
         if (member.voice) {
           member.voice.disconnect();
